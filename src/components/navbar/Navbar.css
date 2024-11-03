@@ -1,0 +1,113 @@
+.nav_container {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-evenly;
+    background: #363739;
+}
+
+.nav_section-buscador {
+    width: 350px;
+    height: 50px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    background: #363739;
+}
+
+.buscador {
+    display: flex;
+}
+
+.buscador_input {
+  position: relative;
+  width: 300px;
+  height: 35px;
+  margin: 0 0 30px 0;
+  padding: 10px 10px 10px 40px;
+  border-radius: 20px;
+  border: none;
+  background: #ffffff;
+}
+
+.buscador_input::placeholder {
+    font-size: 14px;
+}
+
+.buscador_input:focus {
+    outline: none;
+    transform: scale(105%);
+    border: 4px solid #eb611f;
+}
+
+.nav_icon {
+  position: absolute;
+  font-size: 25px;
+  color: rgb(139, 139, 139);  
+  transform: translateX(-290px);
+  top: 15px;
+  
+}
+
+.nav_logo-container {
+    width: 300px;
+    height: 100px;
+}
+
+.nav_logo-container a {
+    text-decoration: none;
+}
+
+.nav_logo-span-1 {
+    margin-left: 5px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav_logo-span-2 {
+    font-size: 28px;
+    color: #ffffffc2;
+}
+
+.nav_logo {
+    font-size: 30px;
+    color: #eb611f;
+}
+
+.nav_container-buscador {
+    margin-right: 15px;
+}
+
+.nav_container-botones {
+    margin-right: 10px;
+}
+
+.nav_section-button {
+    width: 950px;
+    height: 50px;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-end;
+    background: #363739;
+}
+
+
+.nav_button {
+    width: 150px;
+    height: 35px;
+    border-radius: 20px;
+    background: #6b6d70;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.nav_button:hover {
+    background: #eb611f;
+    transform: scale(105%);
+    transition: 0.5s;
+}
+
