@@ -1,6 +1,5 @@
-import '../App.css'
-import '../pages/Home.css'
-import Products from '../components/products/Products'
+import './Home.css'
+import Products from '../../components/products/Products'
 
 export default function Home() {
 

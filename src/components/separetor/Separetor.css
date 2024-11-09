@@ -1,0 +1,13 @@
+.separetor_container {
+    width: 100%;
+    height: 1px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.separetor {
+    width: 1130px;
+    height: 100%;
+    background: #8c52ff;
+}

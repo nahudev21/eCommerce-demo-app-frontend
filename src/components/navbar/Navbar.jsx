@@ -1,7 +1,5 @@
 import './Navbar.css'
 import { IoMdSearch } from "react-icons/io";
-import { SiShortcut } from "react-icons/si";
-
 
 export default function Navbar() {
   return (
@@ -9,7 +7,6 @@ export default function Navbar() {
       <section className="nav_section-buscador">
         <div className="nav_logo-container">
           <a href="/">
-            <SiShortcut className="nav_logo" />
             <span className="nav_logo-span-1">Tuchin</span>
             <span className="nav_logo-span-2">Deals</span>
           </a>
@@ -29,10 +26,10 @@ export default function Navbar() {
           </form>
         </div>
         <div className="nav_container-botones">
-          <button className="nav_button">Regístrate</button>
+          <button className="nav_button">Inicia Sesión</button>
         </div>
         <div>
-          <button className="nav_button">Inicia Sesión</button>
+          <button className="nav_button">Regístrate</button>
         </div>
       </section>
     </nav>
