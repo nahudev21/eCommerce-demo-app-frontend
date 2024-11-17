@@ -1,0 +1,112 @@
+/* src/components/Modal.css */
+.modal-overlay {
+    position: fixed;
+    border-radius: 8px;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;  
+    height: auto;   
+}
+
+.modal-overlay.show {
+    transition: 0.6s ease-in-out;
+    background: #218838;
+}
+
+.modal-content {
+    background: whitesmoke;
+    color: black;
+    padding: 15px;
+    border-radius: 8px;
+    width: 300px;
+    height: auto;
+    overflow-y: auto;
+}
+
+.modal-content h2 {
+    color: #5f65ac;
+}
+
+.modal-content ul {
+    margin-top: 10px;
+}
+
+.modal-content li {
+    margin-top: 10px;
+    height: auto;
+    list-style: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: white;
+}
+
+.cart_modal-container-img {
+    width: 100px;
+    height: 100px;
+}
+
+.cart_modal-img {
+    width: 100%;
+    height: 100%
+}
+
+.cart_modal-container-info {
+    align-items: center;
+    align-content: center;
+}
+
+.cart_modal-info-button {
+    width: 80px;
+    height: 20px;
+    margin-top: 5px;
+    border-radius: 20px;
+    background: #8790ef;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.cart_modal-info-button:hover {
+    background: #5f65ac;
+    transform: scale(105%);
+    transition: 0.5s;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #5f65ac;
+    transform: scale(105%);
+}
+
+.checkout-btn {
+    margin-top: 20px;
+    background: #8790ef;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background: #5f65ac;
+    transform: scale(105%);
+    transition: 0.5s;
+}

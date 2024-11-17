@@ -28,6 +28,17 @@ export function ProductProvider ({ children }) {
   useEffect(() => {
     getProducts()
   }, [])
+
+   const getImageId = (products) => {
+     products.map((product) => {
+       const images = product.images;
+       images.map((image) => {
+         const imageId = image.imageId;
+         console.log(imageId);
+         return imageId;
+       });
+     });
+   }; 
   
   const createProduct = async (product) => {
     try {
@@ -50,7 +61,7 @@ export function ProductProvider ({ children }) {
   const deleteProduct = async (id) => {
     try {
       const res = await deleteProductRequest(id);
-      if (res.status === 204) setProducts(products.filter((task) => task._id !== id));
+      if (res.status === 204) setProducts(products.filter((product) => product._id !== id));
       console.log(res.data);
     } catch (error) {
       console.log(error);
@@ -151,6 +162,7 @@ export function ProductProvider ({ children }) {
         getProductsByBrandAndName,
         getProductsByCategoryAndBrand,
         countProductsByBrandAndName,
+        getImageId
       }}
     >
       {children}

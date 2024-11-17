@@ -1,6 +1,6 @@
 .card_container {
     width: 248px;
-    height: 410px;
+    height: 356px;
     margin: 10px;
     border-radius: 10px;
     border: 1px solid rgb(204, 204, 204);
@@ -9,7 +9,7 @@
 
 .card_sections-container {
   width: 230px;
-  height: 406px;
+  height: 346px;
   margin: auto;
 }
 
@@ -30,10 +30,18 @@
     text-align: left;
 }
 
+.card_price-container {
+    margin-top: 1px;
+}
+
 .card_price {
     color: #000000CC;
     font-size: 24px;
-    margin-top: 2px;
+    
+}
+
+.card_envio-container {
+    margin-top: 15px;
 }
 
 .card_envio {
@@ -51,8 +59,9 @@
 
 .card_button {
     width: 120px;
+    margin-top: 10px;
     border-radius: 3px;
-    background: #3483fa;
+    background: #747cd3;
     color: #fff;
     padding: 2px 4px;
     font-size: 12px;
@@ -63,7 +72,7 @@
 }
 
 .card_button:hover {
-    background: #2968c5;
+    background: #5f65ac;
     transform: scale(105%);
     transition: 0.4s;
 }
