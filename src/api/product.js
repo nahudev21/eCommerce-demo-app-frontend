@@ -1,4 +1,5 @@
 import { API_URL } from "../config";
+import { getImageRequest } from "./images";
 
 export const createProductRequest = async (product) => {
   try {
@@ -58,13 +59,25 @@ export const getAllProductsRequest = async () => {
       headers: { "Content-type": "Application/json" },
     });
     if (response.ok) {
-      const json = await response.json();
-      return json;
+      const products = await response.json();
+
+      return products;
     }
   } catch (error) {
     console.log(error);
   }
 };
+
+const getImageId = (product) => {
+    const data = product.data;
+    const {images} = data
+    const imageId = images.map((image) => {
+      const id = image.imageId
+      return id
+    })
+
+    return imageId;
+}; 
 
 export const getProductByIdRequest = async (id) => {
   try {
@@ -73,9 +86,17 @@ export const getProductByIdRequest = async (id) => {
       headers: { "Content-type": "Application/json" },
     });
     if (response.ok) {
-      const json = await response.json();
-      console.log(json);
-      return json;
+      const product = await response.json();
+      const imageId = getImageId(product)
+      const imageUrl = await getImageRequest(imageId)
+      console.log(imageUrl);
+
+      const newProduct = {
+        ...product,
+        pathImage: imageUrl,
+      };
+      console.log(newProduct)
+      return newProduct;
     }
   } catch (error) {
     console.log(error);

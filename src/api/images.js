@@ -18,8 +18,9 @@ export const getImageRequest = async (id) => {
     });
     if (response.ok) {
       const json = await response.blob();
+      const urlImage = URL.createObjectURL(json)
       //const imageBase = await blobToBase64(json)
-      return json
+      return urlImage
     }
   } catch (error) {
     console.log(error);
