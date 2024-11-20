@@ -17,7 +17,7 @@ const ProductContext = createContext()
 
 export const useProducts = () => {
   const context = useContext(ProductContext);
-  if (!context) throw new Error("useTasks must be used within a TaskProvider");
+  if (!context) throw new Error("useProducts must be used within a ProductsProvider");
   return context;
 };
 

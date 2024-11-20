@@ -1,27 +1,16 @@
 import './Navbar.css'
+import { useCart } from '../../context/CartContext';
 import { IoMdSearch } from "react-icons/io";
 import { TiShoppingCart } from "react-icons/ti";
 import { CartModal } from '../cartModal/CartModal';
 import { useEffect, useState } from 'react';
-import { getProductByIdRequest } from '../../api/product';
-
+import { getProductByIdRequest } from '../../api/product'
 
 export default function Navbar() {
 
-  const [cart, setCart] = useState([]);
+  const { cart, addToCart, itemsAmount, totalPrice } = useCart();
+
   const [isModalOpen, setIsModalOpen] = useState(true);
-
-  
-
-  useEffect(() => {
-    const getProduct = async () => {
-      const item = await getProductByIdRequest(4);
-      setCart(item);
-    }
-
-    getProduct()
-  }, [])
-
   
   const closeModal = () => {
     setIsModalOpen(false);
@@ -30,6 +19,26 @@ export default function Navbar() {
   const openModal = () => {
     setIsModalOpen(true);
   };
+
+  useEffect(() => {
+    const selectedProduct = async () => {
+      const product = await getProductByIdRequest(7);
+      addToCart(product);
+    }
+
+    selectedProduct()
+  }, [])
+
+   useEffect(() => {
+     const selectedProduct = async () => {
+       const product = await getProductByIdRequest(4);
+       addToCart(product);
+     };
+
+     selectedProduct();
+   }, []);
+
+   
 
   return (
     <nav className="nav_container">
@@ -66,14 +75,14 @@ export default function Navbar() {
               <TiShoppingCart className="cart_icon" />
             </button>
             <CartModal
+              cartItems={cart}
               isOpen={isModalOpen}
               closeModal={closeModal}
-              cartItems={cart}
             />
           </div>
           <div className="cart_input-container">
-            <input className="cart_input-items" value={0} disabled />
-            <input className="cart_input-price" value={"$0.00"} disabled />
+            <input className="cart_input-items" value={itemsAmount} disabled />
+            <input className="cart_input-price" value={`$${totalPrice}`} disabled />
           </div>
         </div>
       </section>

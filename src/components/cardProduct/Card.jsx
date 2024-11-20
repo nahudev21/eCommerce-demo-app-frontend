@@ -16,7 +16,7 @@ export default function Card({ product, imageId }) {
           </div>
           <div className="card_envio-container">
             <span className="card_envio">
-              Envio gratis Solo dentro de Tucumán
+              Envio gratis solo dentro de Tucumán
             </span>
           </div>
           <div className="card_price-container">
