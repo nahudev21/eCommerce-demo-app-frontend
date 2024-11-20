@@ -1,39 +1,31 @@
 import './CartModal.css'
-import ipone from "../../assets/iPhone_14.jpg";
+import { MdDeleteSweep } from "react-icons/md";
+import { useCart } from '../../context/CartContext';
 
-export function CartModal ({ isOpen, closeModal, cartItems }) {
+export function CartModal ({ cartItems, isOpen, closeModal }) {
+
+  const { removeToCart, clearToCart } = useCart();
+
   if (!isOpen) return null; // Si no está abierta, no renderizamos nada
 
-
-  console.log("name:" + cartItems)
-
-  
-
-   
-
   function CartItem ({ product }) {
+
+    const {pathImage} = product.product
+    const {name} = product.product.data
+    const {price} = product.product.data
+
     return (
-      <>
-        <li>
-          <div className="cart_modal-container-img">
-            <img className="cart_modal-img" src={ipone} />
-          </div>
-          <div className="cart_modal-container-info">
-            <h3>gjgjhgjgjgjgjgj</h3>
-            <p>price: $25000</p>
-            <button className="cart_modal-info-button">Eliminar</button>
-          </div>
-        </li>
-        <li>
-          <div className="cart_modal-container-img">
-            <img className="cart_modal-img" src={ipone} />
-          </div>
-          <div className="cart_modal-container-info">
-            <h3>Iphone 12</h3>
-            <p>Precio: $1000000</p>
-            <button className="cart_modal-info-button">Eliminar</button>
-          </div>
-        </li>
+      <>                         
+          <li>
+            <div className="cart_modal-container-img">
+              <img className="cart_modal-img" src={pathImage} />
+            </div>
+            <div className="cart_modal-container-info">
+              <h3>{name}</h3>
+              <p>{`Precio: ${"$" + price}`}</p>
+              <button onClick={removeToCart} className="cart_modal-info-button">Eliminar</button>
+            </div>
+          </li>
       </>
     );
   }
@@ -45,8 +37,17 @@ export function CartModal ({ isOpen, closeModal, cartItems }) {
           X
         </button>
         <h2>Carrito de Compras</h2>
+        <button onClick={clearToCart} className="cart_modal-clear-button">
+          <MdDeleteSweep />
+        </button>
         <ul>
-          <CartItem />
+          {cartItems.length === 0 ? (
+            <p>El carrito está vacio...</p>
+          ) : (
+            cartItems.map((item, index) => (
+              <CartItem key={index} product={item} />
+            ))
+          )}
         </ul>
         <button className="checkout-btn">Ir a pagar</button>
       </div>
