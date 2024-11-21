@@ -11,6 +11,7 @@ export function CartModal ({ cartItems, isOpen, closeModal }) {
   function CartItem ({ product }) {
 
     const {pathImage} = product.product
+    const { id } = product.product.data;
     const {name} = product.product.data
     const {price} = product.product.data
 
@@ -23,7 +24,9 @@ export function CartModal ({ cartItems, isOpen, closeModal }) {
             <div className="cart_modal-container-info">
               <h3>{name}</h3>
               <p>{`Precio: ${"$" + price}`}</p>
-              <button onClick={removeToCart} className="cart_modal-info-button">Eliminar</button>
+              <button onClick={() => {
+                removeToCart(id)
+              }} className="cart_modal-info-button">Eliminar</button>
             </div>
           </li>
       </>

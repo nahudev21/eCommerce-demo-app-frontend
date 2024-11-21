@@ -71,9 +71,10 @@ export default function Navbar() {
         </div>
         <div className="cart_container">
           <div className="cart_icon-container">
-            <button className='cart_icon-button' onClick={openModal}>
+            <button className="cart_icon-button" onClick={openModal}>
               <TiShoppingCart className="cart_icon" />
             </button>
+            <input className="cart_input-items" value={itemsAmount} disabled />
             <CartModal
               cartItems={cart}
               isOpen={isModalOpen}
@@ -81,8 +82,7 @@ export default function Navbar() {
             />
           </div>
           <div className="cart_input-container">
-            <input className="cart_input-items" value={itemsAmount} disabled />
-            <input className="cart_input-price" value={`$${totalPrice}`} disabled />
+            <p className="cart_input-price">{`$${totalPrice}`}</p>
           </div>
         </div>
       </section>

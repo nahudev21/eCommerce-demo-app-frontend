@@ -13,8 +13,8 @@ export function CartProvider ({ children }) {
 
   const [cart, setCart] = useState([])
   const [itemsAmount, setItemsAmount] = useState(0)
-  const [totalPrice, setTotalPrice] = useState("0.00")
-
+  const [totalPrice, setTotalPrice] = useState(0)
+ 
   useEffect(() => {
   
     const checkTotalItems = () => {
@@ -29,21 +29,20 @@ export function CartProvider ({ children }) {
     
     const checkTotalPrice = () => {
       
-      
-        cart.map((product) => {
-        const { price } = product.product.data;
-        const total = price + parseInt(totalPrice)
-        console.log(total)
-      })  
+      const prices = cart.map((product) => product.product.data.price);
 
-     
+      const totalSum = prices.reduce((accumulator, currentValue) => {
+        return accumulator + currentValue;
+      }, 0);
+
+      setTotalPrice(totalSum);
+      console.log(totalSum)      
     }
     checkTotalPrice()
   }, [cart])
 
   const addToCart = (product) => {
     // Chequear si el producto esta en el carrito a traves del indice
-
     const productInCartIndex = cart.findIndex(
       (item) => item.product.id === product.id
     );
@@ -67,9 +66,17 @@ export function CartProvider ({ children }) {
     ]);
   };
 
-  const removeToCart = (product) => {
+  const removeToCart = (productId) => {
+
     setCart((prevState) =>
-      prevState.filter((item) => item.product.id !== product.id)
+      prevState.filter((item) => {
+        const {id} = item.product.data
+        const itemId = id
+
+        return (
+          itemId !== productId
+        )
+      })
     );
   };
 
