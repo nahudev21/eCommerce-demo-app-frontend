@@ -17,11 +17,11 @@ function App() {
         <CartProvider>
           <Navbar />
           <Separetor />
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/admin-page" element={<AdminPage />} />
-          </Routes>
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/admin-page" element={<AdminPage />} />
+            </Routes>
           <Footer />
         </CartProvider>
       </ProductProvider>

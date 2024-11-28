@@ -10,7 +10,7 @@ export default function Navbar() {
 
   const { cart, addToCart, itemsAmount, totalPrice } = useCart();
 
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   
   const closeModal = () => {
     setIsModalOpen(false);

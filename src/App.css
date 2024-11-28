@@ -3,4 +3,8 @@
   margin: 0;
   box-sizing: border-box;
   text-align: center;
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }
+

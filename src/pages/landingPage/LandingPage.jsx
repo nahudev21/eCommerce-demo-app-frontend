@@ -3,6 +3,7 @@ import iphones from '../../assets/iphones.jpg'
 import { FaCheck } from "react-icons/fa";
 import Products from '../../components/products/Products';
 import Separetor from '../../components/separetor/Separetor';
+import { Link } from 'react-router-dom';
 
 export default function LandingPage() {
   return (
@@ -21,7 +22,9 @@ export default function LandingPage() {
             del mercado.
           </p>
           <p>¡Compra ahora y lleva tu experiencia móvil al siguiente nivel!</p>
-          <button className="section_left-button">Empezar</button>
+          <Link to='/home'>
+            <button className="section_left-button">Empezar</button>
+          </Link>
         </section>
         <section className="section_right">
           <div className="section_right-container-img">
@@ -49,7 +52,7 @@ export default function LandingPage() {
       <Separetor />
       <div className="products_section">
         <h3>Elige el dispositivo que mejor se ajuste a tus necesidades!</h3>
-        <div className='products'>
+        <div className="products">
           <Products />
         </div>
       </div>
