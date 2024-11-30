@@ -25,7 +25,7 @@
 
 .section_left p {
   width: 400px;
-  color: #8790ef;
+  color: black;
   font-size: 20px;
   margin: 10px 0 0 115px;
   text-align: start;
@@ -109,8 +109,8 @@
 }
 
 .products_section h3 {
-    color: #5f65ac;
-    font-size: 30px;
+    color: black;
+    font-size: 28px;
 }
 
 .products {

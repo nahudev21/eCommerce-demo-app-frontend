@@ -64,7 +64,7 @@
 
 .nav_logo-span-2 {
     font-size: 28px;
-    color: #eb611f;
+    color: black;
 }
 
 .nav_logo {
@@ -148,8 +148,8 @@
     height: 16px;
     text-align: center;
     border-radius: 30px;
-    background: #d3561c;
-    color: whitesmoke;
+    background: black;
+    color: white;
     font-weight: 600;
     font-size: 11px;
     border: none;
@@ -161,7 +161,7 @@
     height: auto;
     border: none;
     background: transparent;
-    color: whitesmoke;
+    color: white;
     font-weight: 600;
     font-size: 12px;
     text-align: center;
