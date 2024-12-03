@@ -1,16 +1,30 @@
+.card_link {
+    text-decoration: none;
+}
+
 .card_container {
     width: 248px;
-    height: 356px;
+    height: 376px;
     margin: 10px;
     border-radius: 10px;
     border: 1px solid rgb(204, 204, 204);
     background: white;
 }
 
+.card_container:hover {
+    transform: scale(1.02);
+} 
+
 .card_sections-container {
   width: 230px;
-  height: 346px;
+  height: 356px;
   margin: auto;
+}
+
+.card_sections-container hr {
+    border: none;
+    height: 1px;
+    background: gray;
 }
 
 .card_img-container {
@@ -41,7 +55,7 @@
 }
 
 .card_envio-container {
-    margin-top: 15px;
+    margin-top: 0;
 }
 
 .card_envio {
@@ -52,7 +66,7 @@
 
 .card_info h3 {
     color: #000000;
-    font-size: 24px;
+    font-size: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-top: 4px;
 }
@@ -60,7 +74,7 @@
 .card_button {
     width: 100%;
     height: 25px;
-    margin-top: 20px;
+    margin-top: 10px;
     border-radius: 3px;
     background: #747cd3;
     color: #fff;
